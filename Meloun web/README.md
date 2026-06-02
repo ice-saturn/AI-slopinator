@@ -3,7 +3,7 @@
 Komplexní a plně optimalizovaná webová prezentace zaměřená na svět melounů. Projekt byl vyvinut čistě pomocí nativních webových technologií s důrazem na přístupnost, výkon a čistotu kódu "pod kapotou".
 
 * **Autor:** Petr Pelc
-* **Živý web (GitHub Pages):** [https://tvuj-username.github.io/svet-melounu/](https://tvuj-username.github.io/svet-melounu/)
+* **Živý web (GitHub Pages):** [https://ice-saturn.github.io/AI-slopinator/Meloun%20web/index.html](https://ice-saturn.github.io/AI-slopinator/Meloun%20web/index.html)
 * **GitHub Repozitář:** [https://github.com/ice-saturn/AI-slopinator/tree/main/Meloun%20web](https://github.com/ice-saturn/AI-slopinator/tree/main/Meloun%20web)
 
 ---
