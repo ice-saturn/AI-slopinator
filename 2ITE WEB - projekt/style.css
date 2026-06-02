@@ -1,0 +1,655 @@
+/* ==========================================
+   SVĚT MELOUNŮ – style.css
+   Téma: melounové barvy, letní atmosféra
+   ========================================== */
+
+/* === CSS PROMĚNNÉ – OPTIMALIZOVÁNO PRO KONTRAST WCAG AA === */
+:root {
+  --clr-bg:        #fdf6f0;          /* teplá smetanová */
+  --clr-surface:   #ffffff;
+  --clr-stripe:    #fff4ee;
+
+  --clr-green-dk:  #143d25;          /* ztmavená zelená pro bezchybný kontrast textu */
+  --clr-green-md:  #24633c;          /* upravená střední zelená */
+  --clr-green-lt:  #3a8a52;          /* upravená jasná zelená */
+  --clr-green-pale:#cee6d4;          /* jemná zelená */
+
+  --clr-red:       #d62239;          /* mírně saturovaná červená pro čitelnost textů */
+  --clr-red-dk:    #a01425;          
+  --clr-red-pale:  #fce4e8;
+
+  --clr-seed:      #121212;          
+
+  --clr-text:      #111c11;          /* ztmavený hlavní text */
+  --clr-text-muted:#465746;          /* zvýšený kontrast z 5a6e5a na splnění standardu AA */
+  --clr-border:    #b8d9b8;
+
+  --ff-display:    'Playfair Display', Georgia, serif;
+  --ff-body:       'Nunito', 'Segoe UI', Arial, sans-serif;
+
+  --radius-sm:     0.5rem;
+  --radius-md:     1rem;
+  --radius-lg:     2rem;
+  --shadow-sm:     0 2px 8px rgba(20,61,37,.08);
+  --shadow-md:     0 6px 24px rgba(20,61,37,.12);
+  --shadow-lg:     0 16px 48px rgba(20,61,37,.16);
+
+  --transition:    0.25s ease;
+}
+
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--ff-body);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+strong { font-weight: 700; }
+
+/* === KONTEJNER === */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section-wrap {
+  padding-block: 5rem;
+}
+
+/* ==========================================
+   HEADER & NAVIGACE
+   ========================================== */
+header {
+  background: var(--clr-green-dk);
+  position: relative;
+  overflow: hidden;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--clr-green-dk);
+  border-bottom: 2px solid var(--clr-green-md);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: 0.9rem 1.5rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  transition: opacity var(--transition);
+}
+.logo:hover { opacity: 0.85; }
+.logo-icon { font-size: 1.75rem; }
+.logo-text {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.logo-text strong { color: var(--clr-red); }
+
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+}
+.nav-links a {
+  color: rgba(255,255,255,.85);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.nav-links a:hover {
+  background: var(--clr-green-md);
+  color: #fff;
+}
+.nav-links a:active {
+  background: var(--clr-red);
+  color: #fff;
+}
+
+/* === HAMBURGER === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.bar {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === MOBILNÍ MENU === */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background: var(--clr-green-dk);
+  padding: 0.75rem 1.5rem 1.25rem;
+  gap: 0.25rem;
+}
+.nav-mobile.active { display: flex; }
+.nav-mobile a {
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.nav-mobile a:hover { background: var(--clr-green-md); color: #fff; }
+.nav-mobile a:active { background: var(--clr-red); color: #fff; }
+
+/* ==========================================
+   HERO SEKCE
+   ========================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88vh;
+  padding: 4rem 1.5rem 5rem;
+  max-width: 1180px;
+  margin-inline: auto;
+  gap: 2rem;
+}
+
+.hero-content {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-green-lt);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+.hero h1 em {
+  color: var(--clr-red);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+/* CTA tlačítko */
+.btn-primary {
+  display: inline-block;
+  background: var(--clr-red);
+  color: #fff;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 20px rgba(232,51,74,.35);
+}
+.btn-primary:hover {
+  background: var(--clr-red-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232,51,74,.45);
+}
+.btn-primary:active {
+  background: var(--clr-green-md);
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Dekorativní meloun v hero */
+.hero-deco {
+  flex-shrink: 0;
+}
+.melon-half {
+  width: clamp(180px, 28vw, 400px);
+  height: clamp(180px, 28vw, 400px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 40%, #fff5f5 0%, var(--clr-red) 45%, #b52338 65%, var(--clr-green-lt) 68%, var(--clr-green-md) 76%, var(--clr-green-dk) 100%);
+  box-shadow: var(--shadow-lg), inset 0 -8px 30px rgba(0,0,0,.15);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ==========================================
+   SEKCE – obecné
+   ========================================== */
+.bg-stripe { background: var(--clr-stripe); }
+
+.section-label {
+  font-family: var(--ff-display);
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--clr-green-pale);
+  line-height: 1;
+  margin-bottom: -1.5rem;
+  user-select: none;
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--clr-green-dk);
+  margin-bottom: 2rem;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--clr-red);
+  border-radius: 2px;
+  margin-top: 0.6rem;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--clr-text-muted);
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================
+   O MELOUNECH – dvousloupcový layout
+   ========================================== */
+.two-col {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.col-text {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.05rem;
+}
+.col-fact {
+  flex: 0 1 280px;
+  background: var(--clr-green-dk);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+}
+.col-fact h3 {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--clr-green-lt);
+}
+.col-fact ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.col-fact li {
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-bottom: 0.5rem;
+  color: rgba(255,255,255,.88);
+}
+.col-fact li:last-child { border-bottom: none; padding-bottom: 0; }
+.col-fact strong { color: #fff; }
+
+/* ==========================================
+   DRUHY – kartičky
+   ========================================== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.melon-card {
+  flex: 1 1 240px;
+  background: var(--clr-surface);
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.melon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-green-md);
+}
+.melon-card:active {
+  transform: translateY(-2px);
+  border-color: var(--clr-red);
+}
+.card-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.melon-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  color: var(--clr-green-dk);
+  margin-bottom: 0.5rem;
+}
+.melon-card p {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 0.75rem;
+}
+.melon-card dt { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--clr-green-md); }
+.melon-card dd { font-size: 0.9rem; color: var(--clr-text); }
+
+/* ==========================================
+   PĚSTOVÁNÍ – kroky
+   ========================================== */
+.steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--clr-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(232,51,74,.3);
+}
+.step h3 {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  color: var(--clr-green-dk);
+  margin-bottom: 0.35rem;
+}
+.step p { font-size: 0.97rem; color: var(--clr-text-muted); }
+
+/* ==========================================
+   GALERIE
+   ========================================== */
+/* OPRAVA A STYLIZACE GALERIE (Náhrada chybějících stylů po odebrání placeholderu) */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.gallery-item {
+  flex: 1 1 280px;
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-item:active { transform: translateY(-1px); }
+
+.img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--clr-green-pale) 0%, var(--clr-red-pale) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border-bottom: 2px dashed var(--clr-border);
+}
+figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  font-style: italic;
+}
+
+/* ==========================================
+   RECEPTY
+   ========================================== */
+.recipe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.recipe-card {
+  flex: 1 1 280px;
+  background: var(--clr-surface);
+  border-left: 5px solid var(--clr-red);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.recipe-card:active { border-left-color: var(--clr-green-md); }
+.recipe-icon { font-size: 2.25rem; margin-bottom: 0.75rem; }
+.recipe-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  color: var(--clr-green-dk);
+  margin-bottom: 0.5rem;
+}
+.recipe-card p {
+  font-size: 0.93rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 1rem;
+}
+.recipe-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.recipe-card li { font-size: 0.9rem; color: var(--clr-text); }
+
+/* ==========================================
+   ZAJÍMAVOSTI – bubliny
+   ========================================== */
+.facts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.fact-bubble {
+  flex: 1 1 280px;
+  background: var(--clr-green-dk);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.fact-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.fact-bubble:active { transform: translateY(-1px); }
+.fact-num { font-size: 1.75rem; flex-shrink: 0; }
+.fact-bubble p { font-size: 0.95rem; color: rgba(255,255,255,.88); line-height: 1.55; }
+.fact-bubble strong { color: #fff; }
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  background: var(--clr-seed);
+  color: rgba(255,255,255,.75);
+  padding-block: 3rem;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+.footer-brand .logo-icon { font-size: 1.5rem; }
+.footer-brand .logo-text { font-family: var(--ff-display); font-size: 1.1rem; color: #fff; }
+.footer-brand .logo-text strong { color: var(--clr-red); }
+footer nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+footer nav a {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,.7);
+  transition: color var(--transition);
+}
+footer nav a:hover { color: var(--clr-green-lt); }
+footer nav a:active { color: var(--clr-red); }
+.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,.4); }
+
+/* ==========================================
+   SCROLL-REVEAL ANIMACE
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE – BREAKPOINTY
+   ========================================== */
+
+/* Tablet: ≤ 992px */
+@media (max-width: 992px) {
+  .hero { flex-direction: column; min-height: auto; padding-block: 5rem 4rem; text-align: center; }
+  .hero-sub { margin-inline: auto; }
+  .btn-primary { display: inline-block; }
+  .melon-half { width: 220px; height: 220px; }
+  .section-label { font-size: 4rem; }
+}
+
+/* Velký mobilní: ≤ 768px */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .section-wrap { padding-block: 3.5rem; }
+  .section-label { font-size: 3rem; }
+  .section-title { font-size: 1.9rem; }
+
+  .two-col { flex-direction: column; }
+  .col-fact { width: 100%; }
+
+  .card-grid, .gallery-grid, .recipe-grid, .facts-grid { gap: 1rem; }
+  .melon-card, .gallery-item, .recipe-card, .fact-bubble { flex-basis: 100%; }
+
+  .footer-inner { flex-direction: column; text-align: center; }
+  footer nav ul { justify-content: center; }
+}
+
+/* Malý mobilní: ≤ 480px */
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  .hero h1 { font-size: 2.6rem; }
+  .melon-half { width: 160px; height: 160px; }
+  .step { flex-direction: column; }
+}

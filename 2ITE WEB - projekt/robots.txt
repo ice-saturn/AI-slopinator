@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tvuj-username.github.io/svet-melounu/sitemap.xml

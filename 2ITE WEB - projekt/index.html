@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svět Melounů – Letní Osvěžení</title>
+  <meta name="description" content="Vše o melounech – druhy, pěstování, recepty a zajímavosti o nejoblíbenějším letním ovoci. Zjistěte, jak vybrat ten nejlepší kus!" />
+  <meta name="keywords" content="meloun, vodní meloun, pěstování melounů, recepty, letní osvěžení" />
+  <meta name="author" content="Student" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tvuj-username.github.io/svet-melounu/" />
+  <meta property="og:title" content="Svět Melounů – Letní Osvěžení" />
+  <meta property="og:description" content="Objevte svět šťavnatých melounů – od botaniky přes pěstování až po skvělé recepty." />
+  <meta property="og:image" content="https://tvuj-username.github.io/svet-melounu/img/og-preview.png" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://tvuj-username.github.io/svet-melounu/" />
+  <meta property="twitter:title" content="Svět Melounů – Letní Osvěžení" />
+  <meta property="twitter:description" content="Objevte svět šťavnatých melounů – od botaniky přes pěstování až po skvělé recepty." />
+  <meta property="twitter:image" content="https://tvuj-username.github.io/svet-melounu/img/og-preview.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="hlavicka" role="banner">
+    <nav aria-label="Hlavní navigace">
+      <div class="nav-inner">
+        <a href="#hlavicka" class="logo" aria-label="Svět Melounů – domovská stránka">
+          <span class="logo-icon" aria-hidden="true">🍉</span>
+          <span class="logo-text">Svět<strong>Melounů</strong></span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#o-melouny">O melounech</a></li>
+          <li><a href="#druhy">Druhy</a></li>
+          <li><a href="#pestovani">Pěstování</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#recepty">Recepty</a></li>
+          <li><a href="#zajimavosti">Zajímavosti</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobilni-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+      <ul class="nav-mobile" id="mobilni-menu" role="list" aria-hidden="true">
+        <li><a href="#o-melouny">O melounech</a></li>
+        <li><a href="#druhy">Druhy</a></li>
+        <li><a href="#pestovani">Pěstování</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#recepty">Recepty</a></li>
+        <li><a href="#zajimavosti">Zajímavosti</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" aria-label="Uvítací sekce">
+      <div class="hero-content reveal">
+        <p class="hero-eyebrow">Letní osvěžení roku 2026</p>
+        <h1>Král&nbsp;léta<br /><em>začíná zde</em></h1>
+        <p class="hero-sub">Objevte svět šťavnatých melounů – od botaniky přes pěstování až po skvělé recepty.</p>
+        <a href="#o-melouny" class="btn-primary">Prozkoumejte</a>
+      </div>
+      <div class="hero-deco" aria-hidden="true">
+        <div class="melon-half"></div>
+      </div>
+    </section>
+  </header>
+
+  <main id="hlavni-obsah">
+
+    <section id="o-melouny" aria-labelledby="nadpis-o-melouny">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">01</div>
+        <h2 id="nadpis-o-melouny" class="section-title reveal">Co je vlastně meloun?</h2>
+        <div class="two-col reveal">
+          <div class="col-text">
+            <p>Meloun (<em lang="la">Citrullus lanatus</em>) je jednoletá tropická rostlina z čeledi tykvovitých (Cucurbitaceae), jejíž plod je oblíbeným letním osvěžením po celém světě. Pochází z polosuchých oblastí Afriky, kde divoce roste dodnes.</p>
+            <p>Botanicky se jedná o tzv. <strong>pepó</strong> – typ bobule s tvrdou slupkou. Plod je tvořen z více než <strong>91 % vodou</strong>, díky čemuž je jedním z nejhydratačnějších potravin vůbec. Obsahuje vitaminy A, B6 a C, draslík a lykopen – silný antioxidant.</p>
+            <p>Světová produkce melounů překračuje ročně <strong>100 milionů tun</strong>, přičemž největším producentem je Čína, která zásobuje téměř 70 % světového trhu.</p>
+          </div>
+          <aside class="col-fact" aria-label="Rychlá fakta">
+            <h3>Rychlá fakta</h3>
+            <ul>
+              <li><strong>Čeleď:</strong> Tykvovité (Cucurbitaceae)</li>
+              <li><strong>Původ:</strong> Subsaharská Afrika</li>
+              <li><strong>Voda v plodu:</strong> ~91 %</li>
+              <li><strong>Sezóna v ČR:</strong> červenec – září</li>
+              <li><strong>Energie:</strong> ~30 kcal / 100 g</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="druhy" class="bg-stripe" aria-labelledby="nadpis-druhy">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">02</div>
+        <h2 id="nadpis-druhy" class="section-title reveal">Druhy melounů</h2>
+        <div class="card-grid">
+
+          <article class="melon-card reveal" aria-label="Vodní meloun">
+            <div class="card-emoji" aria-hidden="true">🍉</div>
+            <h3>Vodní meloun</h3>
+            <p>Nejznámější druh s charakteristickou červenou dužinou a zelenými pruhy. Plody mohou vážit od 2 kg až po rekordních 122 kg.</p>
+            <dl>
+              <dt>Odrůdy</dt>
+              <dd>Sugar Baby, Crimson Sweet, Charleston Gray</dd>
+            </dl>
+          </article>
+
+          <article class="melon-card reveal" aria-label="Cukrový meloun">
+            <div class="card-emoji" aria-hidden="true">🍈</div>
+            <h3>Cukrový meloun</h3>
+            <p>Světlá žlutá nebo béžová slupka, sladká světle oranžová nebo bílá dužina. Pochází ze středomořské oblasti.</p>
+            <dl>
+              <dt>Odrůdy</dt>
+              <dd>Cantaloup, Honeydew, Galia</dd>
+            </dl>
+          </article>
+
+          <article class="melon-card reveal" aria-label="Japonský meloun">
+            <div class="card-emoji" aria-hidden="true">🌐</div>
+            <h3>Japonský síťovaný meloun</h3>
+            <p>Prémiová odrůda s charakteristickým síťkovým vzorem na slupce. Jeden plod může stát v Japonsku i desítky tisíc korun.</p>
+            <dl>
+              <dt>Odrůdy</dt>
+              <dd>Yubari King, Crown Melon</dd>
+            </dl>
+          </article>
+
+          <article class="melon-card reveal" aria-label="Zimní meloun">
+            <div class="card-emoji" aria-hidden="true">❄️</div>
+            <h3>Zimní meloun</h3>
+            <p>Velký světlý plod s bílou nebo nazelenalou dužinou. Vydrží při správném skladování až 6 měsíců.</p>
+            <dl>
+              <dt>Odrůdy</dt>
+              <dd>Casaba, Santa Claus, Canary</dd>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="pestovani" aria-labelledby="nadpis-pestovani">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">03</div>
+        <h2 id="nadpis-pestovani" class="section-title reveal">Jak pěstovat melouny</h2>
+        <p class="section-intro reveal">Úspěšné pěstování melounů v českém klimatu je možné, vyžaduje ale správnou přípravu, dostatek tepla a trpělivost.</p>
+
+        <ol class="steps-list" aria-label="Kroky pěstování melounu">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div>
+              <h3>Předpěstování (únor–duben)</h3>
+              <p>Semena vysejte do sadbovačů nebo plastových kelímků s kvalitním substrátem. Udržujte teplotu kolem 25 °C a vlhkost. Klíčení trvá 5–10 dní.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div>
+              <h3>Výběr stanoviště</h3>
+              <p>Melouny potřebují <strong>plné slunce</strong> minimálně 8 hodin denně. Ideální je chráněné, jižně orientované záhony nebo pěstování ve skleníku či fóliovníku.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div>
+              <h3>Přesazení (po 15. května)</h3>
+              <p>Sazečky přesuňte ven až po tzv. Zmrzlých mužích. Vzdálenost mezi rostlinami by měla být alespoň <strong>80–100 cm</strong>.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">4</span>
+            <div>
+              <h3>Zálivka a hnojení</h3>
+              <p>Pravidelná zálivka (raději méně a hlouběji než povrchně) a hnojení draslíkem podporuje tvorbu plodů. Mulčování šetří vlhkost v půdě.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">5</span>
+            <div>
+              <h3>Sklizeň (červenec–září)</h3>
+              <p>Zralý vodní meloun má suchý úponek, matnou slupku a dutý zvuk při poklepání. Cukrové melouny vydají při dotyku charakteristickou vůni.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="galerie" class="bg-stripe" aria-labelledby="nadpis-galerie">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">04</div>
+        <h2 id="nadpis-galerie" class="section-title reveal">Galerie melounů</h2>
+        <p class="section-intro reveal">Fotogalerie reálných odrůd melounů optimalizovaná pro rychlé načítání moderním formátem WebP.</p>
+
+        <div class="gallery-grid" role="list" aria-label="Galerie obrázků melounů">
+
+          <figure class="gallery-item reveal" role="listitem">
+           <img src="img/galerie-1.webp" alt="Celý podlouhlý vodní meloun položený na světlém dřevěném podkladu" width="400" height="300" loading="lazy" />
+            <figcaption>Celý vodní meloun na slunci</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal" role="listitem">
+            <img src="img/galerie-2.webp" alt="Překrojený meloun ukazující zářivě červenou šťavnatou dužinu bez pecek" width="400" height="300" loading="lazy" />
+            <figcaption>Překrojený meloun – zářivě červená dužina</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal" role="listitem">
+            <img src="img/galerie-3.webp" alt="Mladé plody melounů rostoucí na polním záhoně mezi zelenými listy" width="400" height="300" loading="lazy" />
+            <figcaption>Melouny rostoucí na záhoně</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal" role="listitem">
+            <img src="img/galerie-4.webp" alt="Bohatá nabídka různých odrůd kulatých i oválných melounů na venkovním trhu" width="400" height="300" loading="lazy" />
+            <figcaption>Různé druhy melounů na trhu</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal" role="listitem">
+            <img src="img/galerie-5.webp" alt="Detailní rozkrojený cukrový meloun odrůdy Cantaloup s oranžovou dužinou" width="400" height="300" loading="lazy" />
+            <figcaption>Cukrový meloun Cantaloup</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal" role="listitem">
+            <img src="img/galerie-6.webp" alt="Tmavě hnědá semínka vodního melounu připravená k jarnímu výsevu" width="400" height="300" loading="lazy" />
+            <figcaption>Semena melounu k výsevu</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="recepty" aria-labelledby="nadpis-recepty">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">05</div>
+        <h2 id="nadpis-recepty" class="section-title reveal">Letní recepty s melounem</h2>
+        <div class="recipe-grid">
+
+          <article class="recipe-card reveal" aria-label="Recept: Melounový sorbet">
+            <div class="recipe-icon" aria-hidden="true">🧊</div>
+            <h3>Melounový sorbet</h3>
+            <p>Osvěžující zmrzlina ze 3 surovin: melounu, citronové šťávy a medu. Rozmixujte, zmrazte, podávejte.</p>
+            <ul aria-label="Ingredience">
+              <li>500 g melounové dužiny</li>
+              <li>2 lžíce medu</li>
+              <li>šťáva z 1 citronu</li>
+            </ul>
+          </article>
+
+          <article class="recipe-card reveal" aria-label="Recept: Salát s melounem a fetou">
+            <div class="recipe-icon" aria-hidden="true">🥗</div>
+            <h3>Salát s melounem a fetou</h3>
+            <p>Klasická středomořská kombinace sladkého melounu, slaného sýra a mátových lístků překvapí každého hosta.</p>
+            <ul aria-label="Ingredience">
+              <li>¼ vodního melounu</li>
+              <li>150 g fety</li>
+              <li>čerstvá máta, olivový olej</li>
+            </ul>
+          </article>
+
+          <article class="recipe-card reveal" aria-label="Recept: Melounová limonáda">
+            <div class="recipe-icon" aria-hidden="true">🥤</div>
+            <h3>Melounová limonáda</h3>
+            <p>Rychlý nápoj ideální na horké letní dny. Rozmixujte meloun, přidejte minerálku, limetku a čerstvou mátu.</p>
+            <ul aria-label="Ingredience">
+              <li>400 g melounu</li>
+              <li>500 ml minerální vody</li>
+              <li>1 limetka, máta, led</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="zajimavosti" class="bg-stripe" aria-labelledby="nadpis-zajimavosti">
+      <div class="container section-wrap">
+        <div class="section-label reveal" aria-hidden="true">06</div>
+        <h2 id="nadpis-zajimavosti" class="section-title reveal">Věděli jste, že…?</h2>
+        <div class="facts-grid">
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🌍</span>
+            <p>Původní africké melouny byly <strong>hořké a malé</strong>. Šlechtění do sladké podoby trvalo tisíce let.</p>
+          </div>
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🏺</span>
+            <p>Melouny se pěstují <strong>přes 5 000 let</strong>. Jejich semena byla nalezena v hrobkách starověkého Egypta.</p>
+          </div>
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🧬</span>
+            <p>Lykopen dávající melounu červenou barvu je <strong>silnější antioxidant</strong> než vitamín E.</p>
+          </div>
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🇯🇵</span>
+            <p>V Japonsku se prodávají čtvercové melouny vhodné k darování – cena jednoho kusu přesahuje <strong>200 €</strong>.</p>
+          </div>
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🌱</span>
+            <p>Semena melounu jsou jedlá a výživná – obsahují <strong>bílkoviny, hořčík a zinek</strong>.</p>
+          </div>
+
+          <div class="fact-bubble reveal" aria-label="Zajímavost o melounech">
+            <span class="fact-num" aria-hidden="true">🏆</span>
+            <p>Nejtěžší vodní meloun na světě vážil <strong>159 kg</strong> a byl vypěstován v USA v roce 2013.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">🍉</span>
+        <span class="logo-text">Svět<strong>Melounů</strong></span>
+      </div>
+      <nav aria-label="Patičková navigace">
+        <ul role="list">
+          <li><a href="#o-melouny">O melounech</a></li>
+          <li><a href="#druhy">Druhy</a></li>
+          <li><a href="#pestovani">Pěstování</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#recepty">Recepty</a></li>
+          <li><a href="#zajimavosti">Zajímavosti</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">© 2026 Svět Melounů. Vytvořeno s láskou k letnímu ovoci.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
