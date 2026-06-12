@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doppelgänger finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Doppelgänger finder: power by BublíkAI</h1>
+    
+    <div class="tabulky">
+        <div class="tab">
+            <h2>Pesonal information</h2>
+            
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Jaromír Omáčka">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="1" max="99" placeholder="21">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" placeholder="Indie">
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="Pičín">
+            </div>
+
+            <div class="form-group">
+                <label for="hobby">Hobby:</label>
+                <input type="text" id="hobby" placeholder="Kratom a gloglo">
+            </div>
+
+            <label for="vstup-soubor" class="upload-btn">Upload Face Photo</label>
+            <input type="file" id="vstup-soubor" accept="image/*" style="display: none;">
+
+            <div id="nahled-kontejner">
+                <p id="placeholder-text">Preview not found</p>
+                <img id="nahled-obrazku" src="" alt="Náhled obličeje" style="display: none;">
+            </div>
+        </div>
+
+        <div class="tab">
+            <h2>AI análysis</h2>
+            <h3>Global search for a biological twin</h3>
+            <p class="subtitle">Fill in the details, upload a facial photo and run the state-of-the-art pseudo-analytics engine.</p>
+            
+            <p id="status-text">Ready for scan.</p>
+            
+            <p class="shoda-container">
+                Matches: <span id="shoda-cislo">waiting for launch
+</span>
+            </p>
+
+            <div class="progress-bg">
+                <div id="progress-bar"></div>
+            </div>
+
+            <button id="btn-hledat">Find Doppelgänger</button>
+        </div>
+    </div>
+
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <h2>Match found!</h2>
+            <img src="obrázek.png" alt="Ztracené dvojče" class="popup-img">
+            <button id="btn-zavrit">Zavřít</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
