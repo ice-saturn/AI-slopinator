@@ -29,7 +29,6 @@ svet-melounu/
 ├── robots.txt          # Konfigurace přístupu vyhledávacích robotů
 ├── sitemap.xml         # Mapa stránek pro indexaci vyhledávači
 └── img/                # Adresář pro optimalizovaná média
-    ├── og-preview.png  # Náhledový obrázek pro sociální sítě
     ├── galerie-1.webp  # Ukázka optimalizovaného formátu obrázku
     └── ...
 ```
